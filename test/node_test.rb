@@ -5,17 +5,16 @@ require "./lib/node"
 
 class NodeTest < Minitest::Test
 
-  def test_node_is_created_with_surname
+  def test_node_is_created
     node = Node.new("Burke")
 
     assert_equal Node, node.class
-    assert_equal "Burke", node.surname
   end
 
-  def test_node_holds_different_surname
-    node = Node.new("Mitchell")
+  def test_surname_method_creates_surname
+    node = Node.new("Burke")
 
-    assert_equal "Mitchell", node.surname
+    assert_equal "Burke", node.surname
   end
 
   def test_next_node_equals_nil_by_default

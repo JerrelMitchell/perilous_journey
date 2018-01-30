@@ -1,10 +1,8 @@
 class Node
-attr_reader :surname,
-            :append
+  attr_reader :surname
 
-  def initialize(data)
+  def initialize(surname)
     @surname = surname
-    @append = append
   end
 
   def next_node
