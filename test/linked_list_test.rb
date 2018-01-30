@@ -40,6 +40,8 @@ class LinkedListTest < Minitest::Test
   def test_return_integer_with_count_method
     list = LinkedList.new
 
+    list.append("West")
+
     assert_equal 1, list.count
   end
 
