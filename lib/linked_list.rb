@@ -34,28 +34,37 @@ class LinkedList
   end
 
   def to_string
-    #implement a while loop instead of if?
+
     if head.nil?
       ""
-    elsif @count == 1
-      "The #{head.surname} family."
-    elsif @count == 2
-      "The #{head.surname} family, followed by the #{tail.surname} family"
+    elsif @count >= 1
+      "The #{head.surname} family"
     else
-      "The #{head.surname} family, followed by the #{head.next_node.surname} family, followed by the #{tail.surname} family"
+      @count.times do |count| count += 1
+        ", followed by the #{count.to_s.surname} family"
+      end
     end
   end
 
+
+
+
+
+
+
+
+
+  #needs to insert data at a chosen index of the linked list
+  #need to reassign pointers from previous and next nodes
   def insert(count, data)
     new_node = Node.new(data)
 
     if head.nil?
       @head = @tail = new_node
     else
-      new_node.next_node = count
-      count = new_node
+      new_node.next_node = new_node
     end
-    @count += 1
+      @count += 1
   end
 
 

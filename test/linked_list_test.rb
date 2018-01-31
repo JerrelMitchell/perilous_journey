@@ -112,7 +112,7 @@ class LinkedListTest < Minitest::Test
     list.append("Rhodes")
 
     assert_instance_of Node, list.head
-    assert_equal "The Rhodes family.", list.to_string
+    assert_equal "The Rhodes family", list.to_string
     assert_nil list.head.next_node
 
     list.append("Hardy")
@@ -152,7 +152,7 @@ class LinkedListTest < Minitest::Test
     list.append("Brooks")
 
     assert_equal "Brooks", list.head.surname
-    assert_equal "The Brooks family.", list.to_string
+    assert_equal "The Brooks family", list.to_string
 
     list.append("Henderson")
     assert_equal "Henderson", list.head.next_node.surname
