@@ -55,7 +55,7 @@ class LinkedListTest < Minitest::Test
 
     list.append("West")
 
-    assert_equal "The West family.", list.to_string
+    assert_equal "The West family", list.to_string
   end
 
   def test_new_linked_list_class_is_created_with_head_equal_to_nil
@@ -168,7 +168,7 @@ class LinkedListTest < Minitest::Test
     assert_equal 3, list.count
 
     list.insert(1, "Lawson")
-    assert_equal "Lawson", list.head.surname
+    assert_equal "Lawson", list.head.next_node.surname
     end
 
 end
