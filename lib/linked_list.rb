@@ -7,7 +7,7 @@ class LinkedList
   def initialize
     @head = nil
     @tail = nil
-    @current = @head
+    @current = head
     @count = 0
   end
 
@@ -32,7 +32,7 @@ class LinkedList
     end
     @count += 1
   end
-
+v
   def append(data)
     new_node = Node.new(data)
     if head.nil?
