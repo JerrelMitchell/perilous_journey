@@ -1,6 +1,5 @@
 require "./lib/node"
 class LinkedList
-  attr_accessor :count
   attr_reader :head,
               :tail
               :current
@@ -10,6 +9,16 @@ class LinkedList
     @tail = nil
     @current = @head
     @count = 0
+  end
+
+  def count
+    count = 0
+    current_node = @head
+    until current_node.nil?
+      @count += 1
+      current_node = current_node.next_node
+    end
+    @count
   end
 
   def prepend(data)
@@ -49,13 +58,17 @@ class LinkedList
   end
 
   def insert(count, data)
-  (count - 1).times do
-    @current = @current.next_node
-    end
+    current = head
+    (count - 1).times do
+      raise "There's no room in the list" if current.nil?
+      current = current.next_node
       new_node = Node.new(data)
-      new_node.next_node = @current.next_node
       @current.next_node = new_node
+    end
   end
+
+  # need to find a way to index nodes with count and add an unlink and relink
+  # functionality for between nodes to get insert method to work properly.
 
 
 end

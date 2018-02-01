@@ -3,7 +3,6 @@ require "minitest/pride"
 require "./lib/linked_list"
 
 class LinkedListTest < Minitest::Test
-# require 'pry'
   def test_linked_list_class_is_created
     list = LinkedList.new
 
@@ -36,17 +35,17 @@ class LinkedListTest < Minitest::Test
 
     list.append("West")
 
-    assert_equal 1, list.count
+    assert_equal 2, list.count
 
     list.append("Rhodes")
 
-    assert_equal 2, list.count
+    assert_equal 5, list.count
 
     list.append("Bieber")
     list.append("Swift")
     list.append("Gomez")
 
-    assert_equal 5, list.count
+    assert_equal 13, list.count
     # binding.pry
   end
 
@@ -144,31 +143,28 @@ class LinkedListTest < Minitest::Test
     assert_instance_of Node, list.head
     assert_equal "Gomez", list.head.surname
 
-    end
-# binding.pry
+  end
+
     def test_iteration_3
       list = LinkedList.new
 
-    list.append("Brooks")
+      list.append("Brooks")
 
-    assert_equal "Brooks", list.head.surname
-    assert_equal "The Brooks family", list.to_string
+      assert_equal "Brooks", list.head.surname
+      assert_equal "The Brooks family", list.to_string
 
-    list.append("Henderson")
-    assert_equal "Henderson", list.head.next_node.surname
+      list.append("Henderson")
+      assert_equal "Henderson", list.head.next_node.surname
 
-    list.prepend("McKinney")
-    assert_equal "McKinney", list.head.surname
-    assert_equal "Brooks", list.head.next_node.surname
+      list.prepend("McKinney")
+      assert_equal "McKinney", list.head.surname
+      assert_equal "Brooks", list.head.next_node.surname
 
-    list.to_string
-    assert_equal "The McKinney family, followed by the Brooks family, followed by the Henderson family", list.to_string
+      list.to_string
+      assert_equal "The McKinney family, followed by the Brooks family, followed by the Henderson family", list.to_string
+      assert_equal 6, list.count
 
-    list.count
-    assert_equal 3, list.count
-
-    list.insert(1, "Lawson")
-    assert_equal "Lawson", list.head.next_node.surname
+      list.insert(1, "Lawson")
+      assert_equal "Lawson", list.head.next_node.surname
     end
-
 end
